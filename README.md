@@ -86,6 +86,23 @@ pnpm db:migrate-remote
 pnpm run deploy
 ```
 
+## ❓ 常见问题
+
+- 如何获取 `CLOUDFLARE_ACCOUNT_ID` 和 `CLOUDFLARE_API_TOKEN`？
+
+1. 登录 [Cloudflare 控制台](https://dash.cloudflare.com)
+
+2. 复制如图所示的值，这就是 `CLOUDFLARE_ACCOUNT_ID`
+![CLOUDFLARE_ACCOUNT_ID](https://image-dad-storage.bytespark.app/2025/04/16/LzYAHC.png)
+
+3. 点击右上角小人图标，选择配置文件
+
+4. 在左边的菜单选择 API 令牌
+
+5. 创建一个自定义令牌，具体配置可以根据 [此 issue](https://github.com/beilunyang/moemail/issues/42#issuecomment-2767938153) 进行配置，这就是 `CLOUDFLARE_API_TOKEN`
+
+6. 该 token 只会显示一次，请妥善保存
+
 ## 💡 贡献
 
 欢迎提交 Pull Request 或者 Issue 来帮助改进这个项目
