@@ -1,7 +1,9 @@
-import { config } from "@/lib/config";
-import { formatDate } from "@/lib/utils";
 import { allPosts } from "content-collections";
 import Link from "next/link";
+import count from "word-count";
+
+import { config } from "@/lib/config";
+import { formatDate } from "@/lib/utils";
 
 export default function Home() {
   return (
@@ -15,9 +17,9 @@ export default function Home() {
       </div>
       <div className="space-y-4">
         <h2 className="text-2xl font-bold mb-8">推荐阅读</h2>
-        <div className="space-y-8">
+        <div className="space-y-4">
           {allPosts.map((post) => (
-            <article key={post.slug} className="border-b border-gray-200 pb-4">
+            <article key={post.slug} className="border-b border-gray-200 last:border-b-0 pb-4">
               <Link href={`/posts/${post.slug}`}>
                 <div className="flex flex-col space-y-2">
                   <div className="flex items-center justify-between">
@@ -25,7 +27,7 @@ export default function Home() {
                       {post.title}
                     </h2>
                     <span className="text-sm text-gray-500">
-                      {formatDate(post.date)}
+                      {formatDate(post.date)} · {count(post.content)} 字
                     </span>
                   </div>
                   <p className="text-gray-600 line-clamp-2">{post.summary}</p>
