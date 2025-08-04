@@ -44,3 +44,5 @@ next-env.d.ts
 !.dev.vars.example
 .env*
 !.env.example
+
+.content-collections
