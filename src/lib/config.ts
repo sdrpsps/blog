@@ -17,7 +17,7 @@ type SiteConfig = {
 export const config: SiteConfig = {
   metadata: {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
-    title: "Sunny's Blogs",
+    title: "Sunny's Blog",
     description: "一个在往全栈发展的前端仔自留地",
     keywords: [
       "Blog",

@@ -2,7 +2,14 @@ import type { NextConfig } from "next";
 import { withContentCollections } from "@content-collections/next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "static.bytespark.me",
+      },
+    ],
+  },
 };
 
 // added by create cloudflare to enable calling `getCloudflareContext()` in `next dev`

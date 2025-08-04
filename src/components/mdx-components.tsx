@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
@@ -7,21 +6,25 @@ import { cn } from "@/lib/utils";
 
 // 生成标题 ID 的工具函数
 const generateHeadingId = (children: React.ReactNode): string => {
-  if (typeof children === 'string') {
+  if (typeof children === "string") {
     return children
       .toLowerCase()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .replace(/-+/g, '-')
-      .replace(/^-|-$/g, '');
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-")
+      .replace(/^-|-$/g, "");
   }
-  return '';
+  return "";
 };
 
 export const mdxComponents = {
-  h1: ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+  h1: ({
+    className,
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLHeadingElement>) => {
     const id = generateHeadingId(children);
-    
+
     return (
       <h1
         id={id}
@@ -36,9 +39,13 @@ export const mdxComponents = {
       </h1>
     );
   },
-  h2: ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+  h2: ({
+    className,
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLHeadingElement>) => {
     const id = generateHeadingId(children);
-    
+
     return (
       <h2
         id={id}
@@ -53,9 +60,13 @@ export const mdxComponents = {
       </h2>
     );
   },
-  h3: ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+  h3: ({
+    className,
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLHeadingElement>) => {
     const id = generateHeadingId(children);
-    
+
     return (
       <h3
         id={id}
@@ -70,9 +81,13 @@ export const mdxComponents = {
       </h3>
     );
   },
-  h4: ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+  h4: ({
+    className,
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLHeadingElement>) => {
     const id = generateHeadingId(children);
-    
+
     return (
       <h4
         id={id}
@@ -87,9 +102,13 @@ export const mdxComponents = {
       </h4>
     );
   },
-  h5: ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+  h5: ({
+    className,
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLHeadingElement>) => {
     const id = generateHeadingId(children);
-    
+
     return (
       <h5
         id={id}
@@ -104,9 +123,13 @@ export const mdxComponents = {
       </h5>
     );
   },
-  h6: ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+  h6: ({
+    className,
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLHeadingElement>) => {
     const id = generateHeadingId(children);
-    
+
     return (
       <h6
         id={id}
@@ -187,10 +210,10 @@ export const mdxComponents = {
     />
   ),
   img: ({
+    src,
     className,
     alt,
     title,
-    ...props
   }: React.ImgHTMLAttributes<HTMLImageElement>) => {
     // 如果 title 属性存在，将其作为底部描述
     const hasCaption = title && title.trim() !== "";
@@ -198,14 +221,17 @@ export const mdxComponents = {
     if (hasCaption) {
       return (
         <>
-          <img
+          <Image
+            src={src as string}
             className={cn(
-              "max-w-full rounded-lg",
+              "max-w-[80%] mx-auto rounded-lg",
               "shadow-sm w-full mt-8",
               className
             )}
-            alt={alt}
-            {...props}
+            alt={alt || ""}
+            width={0}
+            height={0}
+            sizes="100vw"
           />
           <span className="block mt-3 text-center text-sm text-muted-foreground">
             {title}
@@ -216,14 +242,17 @@ export const mdxComponents = {
 
     // 如果没有 title，返回普通图片
     return (
-      <img
+      <Image
+        src={src as string}
         className={cn(
-          "max-w-full rounded-lg",
+          "max-w-[80%] mx-auto rounded-lg",
           "shadow-sm my-8",
           className
         )}
-        alt={alt}
-        {...props}
+        alt={alt || ""}
+        width={0}
+        height={0}
+        sizes="100vw"
       />
     );
   },
@@ -335,10 +364,11 @@ export const mdxComponents = {
     <>
       <video
         className={cn(
-          "max-w-full rounded-lg border border-border/50",
+          "max-w-[70%] mx-auto rounded-lg border border-border/50",
           "shadow-sm w-full mt-8",
           className
         )}
+        loop
         controls
         preload="metadata"
         {...props}
