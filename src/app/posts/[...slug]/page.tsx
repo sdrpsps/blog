@@ -1,17 +1,21 @@
 import { allPosts } from "content-collections";
 import "highlight.js/styles/github-dark.min.css";
 import { Metadata } from "next";
-import { MDXRemote } from "next-mdx-remote-client/rsc";
 import { notFound } from "next/navigation";
+import Markdown from "react-markdown";
+import rehypeHighlight from "rehype-highlight";
+import rehypeKatex from "rehype-katex";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
 import count from "word-count";
 
 import { GoTop } from "@/components/go-top";
 import { mdxComponents } from "@/components/mdx-components";
 import { TableOfContents } from "@/components/table-of-contents";
-import { mdxOptions } from "@/lib/mdx-options";
-import { formatDate } from "@/lib/utils";
-import { getTableOfContents } from "@/lib/toc";
 import { config } from "@/lib/config";
+import { getTableOfContents } from "@/lib/toc";
+import { formatDate } from "@/lib/utils";
 
 interface PostsSlugPageProps {
   params: Promise<{ slug: string[] }>;
@@ -72,11 +76,13 @@ const PostsSlugPage = async ({ params }: PostsSlugPageProps) => {
         </div>
 
         <main>
-          <MDXRemote
-            source={post.content}
+          <Markdown
             components={mdxComponents}
-            options={mdxOptions}
-          />
+            remarkPlugins={[remarkGfm, remarkMath]}
+            rehypePlugins={[rehypeKatex, rehypeHighlight, rehypeSlug]}
+          >
+            {post.content}
+          </Markdown>
         </main>
       </div>
       <div className="hidden text-sm xl:block">
