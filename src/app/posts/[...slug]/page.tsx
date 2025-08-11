@@ -10,6 +10,7 @@ import remarkMdx from "remark-mdx";
 import { SafeMdxRenderer } from "safe-mdx";
 import count from "word-count";
 
+import GiscusComments from "@/components/giscus-comments";
 import { GoTop } from "@/components/go-top";
 import { mdxComponents } from "@/components/mdx-components";
 import { TableOfContents } from "@/components/table-of-contents";
@@ -104,6 +105,7 @@ const PostsSlugPage = async ({ params }: PostsSlugPageProps) => {
           </div>
         </div>
       </div>
+      <GiscusComments />
     </div>
   );
 };

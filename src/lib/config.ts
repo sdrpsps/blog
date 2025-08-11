@@ -7,11 +7,11 @@ type SiteConfig = {
     email: string;
     bio: string;
   };
-  /* giscus: {
+  giscus: {
     repo: string;
     repoId: string;
     categoryId: string;
-  }; */
+  };
 };
 
 export const config: SiteConfig = {
@@ -40,9 +40,9 @@ export const config: SiteConfig = {
     email: "sunny@bytespark.me",
     bio: "多思考，多实践，多总结",
   },
-  /* giscus: {
+  giscus: {
     repo: "sdrpsps/blog",
-    repoId: "R_kgDOHyVOjg",
-    categoryId: "DIC_kwDOHyVOjs4CQsH7",
-  }, */
+    repoId: "R_kgDOPX96bw",
+    categoryId: "DIC_kwDOPX96b84CuB6x",
+  },
 };
