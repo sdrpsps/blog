@@ -1,13 +1,13 @@
 import { allPosts } from "content-collections";
 import "highlight.js/styles/github-dark.min.css";
+import { Root } from "mdast";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Markdown from "react-markdown";
-import rehypeHighlight from "rehype-highlight";
-import rehypeKatex from "rehype-katex";
-import rehypeSlug from "rehype-slug";
+import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
+import remarkMdx from "remark-mdx";
+import { SafeMdxRenderer } from "safe-mdx";
 import count from "word-count";
 
 import { GoTop } from "@/components/go-top";
@@ -61,6 +61,19 @@ const PostsSlugPage = async ({ params }: PostsSlugPageProps) => {
   const { slug } = await params;
   const post = await getPostBySlug(slug.join("/"));
 
+  const parser = remark()
+    .use(remarkMdx)
+    .use(remarkGfm)
+    .use(remarkMath)
+    .use(() => {
+      return (tree, file) => {
+        file.data.ast = tree;
+      };
+    });
+
+  const file = parser.processSync(post.content);
+  const mdast = file.data.ast as Root;
+
   const toc = await getTableOfContents(post.content);
 
   return (
@@ -76,13 +89,11 @@ const PostsSlugPage = async ({ params }: PostsSlugPageProps) => {
         </div>
 
         <main>
-          <Markdown
+          <SafeMdxRenderer
+            markdown={post.content}
+            mdast={mdast}
             components={mdxComponents}
-            remarkPlugins={[remarkGfm, remarkMath]}
-            rehypePlugins={[rehypeKatex, rehypeHighlight, rehypeSlug]}
-          >
-            {post.content}
-          </Markdown>
+          />
         </main>
       </div>
       <div className="hidden text-sm xl:block">

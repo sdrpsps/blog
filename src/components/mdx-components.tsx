@@ -1,21 +1,9 @@
+import hljs from "highlight.js";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 
-import { cn } from "@/lib/utils";
-
-// 生成标题 ID 的工具函数
-const generateHeadingId = (children: React.ReactNode): string => {
-  if (typeof children === "string") {
-    return children
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, "")
-      .replace(/\s+/g, "-")
-      .replace(/-+/g, "-")
-      .replace(/^-|-$/g, "");
-  }
-  return "";
-};
+import { cn, generateHeadingId } from "@/lib/utils";
 
 export const mdxComponents = {
   h1: ({
@@ -23,11 +11,9 @@ export const mdxComponents = {
     children,
     ...props
   }: React.HTMLAttributes<HTMLHeadingElement>) => {
-    const id = generateHeadingId(children);
-
     return (
       <h1
-        id={id}
+        id={generateHeadingId(children)}
         className={cn(
           "font-heading mt-12 mb-8 scroll-m-20 text-4xl/tight font-bold tracking-tight",
           "text-foreground",
@@ -44,11 +30,9 @@ export const mdxComponents = {
     children,
     ...props
   }: React.HTMLAttributes<HTMLHeadingElement>) => {
-    const id = generateHeadingId(children);
-
     return (
       <h2
-        id={id}
+        id={generateHeadingId(children)}
         className={cn(
           "font-heading mt-10 mb-6 scroll-m-20 text-2xl/tight font-semibold tracking-tight",
           "text-foreground",
@@ -65,11 +49,9 @@ export const mdxComponents = {
     children,
     ...props
   }: React.HTMLAttributes<HTMLHeadingElement>) => {
-    const id = generateHeadingId(children);
-
     return (
       <h3
-        id={id}
+        id={generateHeadingId(children)}
         className={cn(
           "font-heading mt-8 mb-4 scroll-m-20 text-xl/tight font-semibold tracking-tight",
           "text-foreground",
@@ -86,11 +68,9 @@ export const mdxComponents = {
     children,
     ...props
   }: React.HTMLAttributes<HTMLHeadingElement>) => {
-    const id = generateHeadingId(children);
-
     return (
       <h4
-        id={id}
+        id={generateHeadingId(children)}
         className={cn(
           "font-heading mt-6 mb-3 scroll-m-20 text-lg/tight font-medium tracking-tight",
           "text-foreground",
@@ -107,11 +87,9 @@ export const mdxComponents = {
     children,
     ...props
   }: React.HTMLAttributes<HTMLHeadingElement>) => {
-    const id = generateHeadingId(children);
-
     return (
       <h5
-        id={id}
+        id={generateHeadingId(children)}
         className={cn(
           "font-heading mt-4 mb-2 scroll-m-20 text-lg/tight font-medium tracking-tight",
           "text-foreground",
@@ -128,11 +106,9 @@ export const mdxComponents = {
     children,
     ...props
   }: React.HTMLAttributes<HTMLHeadingElement>) => {
-    const id = generateHeadingId(children);
-
     return (
       <h6
-        id={id}
+        id={generateHeadingId(children)}
         className={cn(
           "font-heading mt-3 mb-2 scroll-m-20 text-sm/tight font-medium tracking-tight",
           "text-muted-foreground",
@@ -301,24 +277,48 @@ export const mdxComponents = {
     <pre
       className={cn(
         "mt-6 mb-4 overflow-x-auto rounded-lg border border-border/50",
-        "bg-muted/30 p-4 text-sm",
-        "font-mono leading-relaxed",
         className
       )}
       {...props}
     />
   ),
-  code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-    <code
-      className={cn(
-        "rounded-md bg-muted/50 px-1.5 py-0.5",
-        "font-mono text-sm font-medium",
-        "text-foreground border border-border/30",
-        className
-      )}
-      {...props}
-    />
-  ),
+  code: ({
+    className,
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLElement>) => {
+    const lang = className?.replace("language-", "");
+    if (lang && hljs.getLanguage(lang)) {
+      const { value } = hljs.highlight(String(children), { language: lang });
+
+      return (
+        <code
+          className={cn(
+            "p-4 text-sm",
+            "font-mono leading-relaxed",
+            "hljs",
+            className
+          )}
+          dangerouslySetInnerHTML={{ __html: value }}
+          {...props}
+        />
+      );
+    }
+
+    return (
+      <code
+        className={cn(
+          "rounded-md bg-muted/50 px-1.5 py-0.5",
+          "font-mono text-sm font-medium",
+          "text-foreground border border-border/30",
+          className
+        )}
+        {...props}
+      >
+        {children}
+      </code>
+    );
+  },
   small: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <small
       className={cn("text-sm text-muted-foreground", className)}
