@@ -1,4 +1,5 @@
 import { allPosts } from "content-collections";
+import type { Metadata } from "next";
 import Link from "next/link";
 import count from "word-count";
 
@@ -33,3 +34,9 @@ const PostsPage = () => {
 };
 
 export default PostsPage;
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_APP_URL}/posts`,
+  },
+};

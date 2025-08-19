@@ -1,4 +1,5 @@
 import { allPosts } from "content-collections";
+import type { Metadata } from "next";
 
 import PostCard from "@/components/post-card";
 import { config } from "@/lib/config";
@@ -28,3 +29,9 @@ export default function Home() {
     </main>
   );
 }
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_APP_URL,
+  },
+};

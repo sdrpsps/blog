@@ -2,7 +2,9 @@ import { allPosts } from "content-collections";
 import "highlight.js/styles/github-dark.min.css";
 import { Root } from "mdast";
 import { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
@@ -42,11 +44,20 @@ export async function generateMetadata({
     title: `${post.title} | ${config.metadata.title as string}`,
     description: post.summary,
     keywords: post.keywords,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_APP_URL}/posts/${post.slug}`,
+    },
     openGraph: {
       title: `${post.title} | ${config.metadata.title as string}`,
       description: post.summary,
       type: "article",
       url: `${process.env.NEXT_PUBLIC_APP_URL}/posts/${post.slug}`,
+      images: [post.image || ""],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | ${config.metadata.title as string}`,
+      description: post.summary,
       images: [post.image || ""],
     },
   };
@@ -83,6 +94,52 @@ const PostsSlugPage = async ({ params }: PostsSlugPageProps) => {
         <div className="my-8">
           <h1 className="text-3xl font-bold">{post.title}</h1>
         </div>
+        <div className="sr-only">
+          <Link href={`/posts/${post.slug}`}>Canonical</Link>
+        </div>
+        <Script id="ld-json-article" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.summary,
+            image: post.image ? [post.image] : undefined,
+            author: {
+              "@type": "Person",
+              name: config.author.name,
+              email: config.author.email,
+            },
+            datePublished: post.date,
+            dateModified: post.updated || post.date,
+            mainEntityOfPage: `${process.env.NEXT_PUBLIC_APP_URL}/posts/${post.slug}`,
+          })}
+        </Script>
+        <Script id="ld-json-breadcrumb" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "首页",
+                item: process.env.NEXT_PUBLIC_APP_URL,
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "文章",
+                item: `${process.env.NEXT_PUBLIC_APP_URL}/posts`,
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: post.title,
+                item: `${process.env.NEXT_PUBLIC_APP_URL}/posts/${post.slug}`,
+              },
+            ],
+          })}
+        </Script>
         <div className="my-4">
           <p className="text-sm text-gray-500">
             {formatDate(post.date)} · {count(post.content)} 字
