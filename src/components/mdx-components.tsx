@@ -122,6 +122,7 @@ export const mdxComponents = {
   },
   a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
     <a
+      target="_blank"
       className={cn(
         "font-medium text-primary underline decoration-primary/30 underline-offset-4",
         "transition-all duration-200 ease-in-out",
