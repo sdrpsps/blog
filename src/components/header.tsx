@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import ThemeToggle from "@/components/theme-toggle";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const Header = () => {
@@ -34,13 +36,18 @@ const Header = () => {
               priority
             />
           </Link>
-          <Link
-            href="https://github.com/sdrpsps"
-            title="Github"
-            target="_blank"
-          >
-            <GithubIcon />
-          </Link>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <Button variant="ghost" size="icon" asChild>
+              <Link
+                href="https://github.com/sdrpsps"
+                title="Github"
+                target="_blank"
+              >
+                <GithubIcon className="w-5 h-5" />
+              </Link>
+            </Button>
+          </div>
         </motion.div>
       </div>
     </header>

@@ -12,7 +12,7 @@ interface PostCardProps {
 
 export default function PostCard({ post }: PostCardProps) {
   return (
-    <article className="border-b border-gray-200 last:border-b-0 pb-4">
+    <article className="border-b border-border last:border-b-0 pb-4">
       <Link href={`/posts/${post.slug}`} className="block">
         {post.image && (
           <Image
@@ -27,13 +27,13 @@ export default function PostCard({ post }: PostCardProps) {
         <div className="space-y-2">
           <div className="line-clamp-2 text-xl">
             <div className="flex justify-between w-full">
-              <span className="underline underline-offset-4">{post.title}</span>
-              <span className="text-sm text-gray-500">
+              <span className="underline underline-offset-4 text-foreground">{post.title}</span>
+              <span className="text-sm text-muted-foreground">
                 {formatDate(post.date)} · {count(post.content)} 字
               </span>
             </div>
           </div>
-          <div className="line-clamp-2">{post.summary}</div>
+          <div className="line-clamp-2 text-muted-foreground">{post.summary}</div>
         </div>
       </Link>
     </article>

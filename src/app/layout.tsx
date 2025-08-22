@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
+    <html lang="zh-CN" suppressHydrationWarning>
       <body className="flex flex-col min-h-screen min-w-md">
         <Script id="ld-json-website" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
