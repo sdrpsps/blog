@@ -26,7 +26,7 @@ export default function PostCard({ post }: PostCardProps) {
         )}
         <div className="space-y-2">
           <div className="line-clamp-2 text-xl">
-            <div className="flex justify-between w-full">
+            <div className="flex flex-col md:flex-row md:justify-between gap-2 w-full">
               <span className="underline underline-offset-4 text-foreground">{post.title}</span>
               <span className="text-sm text-muted-foreground">
                 {formatDate(post.date)} · {count(post.content)} 字
