@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "static.bytespark.me",
+        hostname: "*.bytespark.me",
       },
     ],
   },
