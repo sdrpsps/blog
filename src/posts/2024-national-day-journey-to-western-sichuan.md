@@ -4,7 +4,7 @@ date: 2024-10-06T12:58:31.000Z
 updated: 2025-08-23T10:11:19.000Z
 keywords: ["旅行", "川西"]
 summary: "2024年10月1号到10月6号，我与女友（现已是前女友）前往川西旅行，感受到川西的独特魅力"
-image: "https://blog-assets.bytespark.me/TDZeWS.jpeg"
+image: "https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/yuzixi-alpenglow.webp"
 ---
 
 ## 准备
@@ -15,13 +15,13 @@ image: "https://blog-assets.bytespark.me/TDZeWS.jpeg"
 
 具体的机票信息如下：
 
-![广州白云机场 - 成都双流机场：1130元/人（原本还有更便宜的票，但因为犹豫过久而错失）](https://blog-assets.bytespark.me/zi3EB1.jpeg "广州白云机场 - 成都双流机场：1130元/人（原本还有更便宜的票，但因为犹豫过久而错失）")
+![广州白云机场 - 成都双流机场：1130元/人（原本还有更便宜的票，但因为犹豫过久而错失）](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/ticket-guangzhou-to-chengdu-1130.webp "广州白云机场 - 成都双流机场：1130元/人（原本还有更便宜的票，但因为犹豫过久而错失）")
 
-![成都双流机场 - 广州白云机场：1600元/人](https://blog-assets.bytespark.me/gDJo2Z.jpeg "成都双流机场 - 广州白云机场：1600元/人")
+![成都双流机场 - 广州白云机场：1600元/人](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/ticket-chengdu-to-guangzhou-1600.webp "成都双流机场 - 广州白云机场：1600元/人")
 
 今年我们决定偷懒，选择跟团游，以免在规划行程上耗费过多精力。最初，我们通过小红书搜索了一些旅行团，发现`4天3夜`的行程价格相差无几，每人大约在 `2400至2600元`之间。尽管与平时价格相比显得较高，这次只能接受“割韭菜”的现实。最后，考虑到通过私人渠道联系的旅行团可能存在不正规的问题，我们最终决定在官方平台上下单，每人 `2358 元`。
 
-![在飞猪下单](https://blog-assets.bytespark.me/o3iWDL.png "在飞猪下单")
+![在飞猪下单](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/feizhu-order.webp "在飞猪下单")
 
 ## 行程
 
@@ -29,11 +29,11 @@ image: "https://blog-assets.bytespark.me/TDZeWS.jpeg"
 
 收拾好行李后，我们在下午 4:00 出发，前往白云机场，预留了两个半小时的候机时间。
 
-![候机](https://blog-assets.bytespark.me/xAE445.jpeg "候机")
+![候机](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/waiting-at-airport.webp "候机")
 
 飞行了两个小时后，我们顺利抵达成都双流机场。
 
-![饭团不好吃](https://blog-assets.bytespark.me/ShgYj2.jpeg "饭团不好吃")
+![饭团不好吃](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/bad-rice-ball.webp "饭团不好吃")
 
 到达酒店时已经是晚上 11:00，简单洗漱后就休息了，因为第二天早上 5:30 我们需要集合出发。
 
@@ -41,7 +41,7 @@ image: "https://blog-assets.bytespark.me/TDZeWS.jpeg"
 
 早上 5:30 我们准时到达司机约定的地点，但司机直到 6:00 才到，而且还需要接其他团友，最终我们在 6:30 才正式出发。
 
-![从成都出发](https://blog-assets.bytespark.me/feEIdV.jpeg "从成都出发")
+![从成都出发](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/departing-chengdu.webp "从成都出发")
 
 由于是国庆假期，堵车几乎是不可避免的，导致我们下午 2:00 才到达四姑娘山景区附近的一家餐馆吃午饭。
 
@@ -53,25 +53,25 @@ image: "https://blog-assets.bytespark.me/TDZeWS.jpeg"
 
 四姑娘山的游览方式是先从山脚坐观光车上山，再一路徒步或者坐观光车下山。山路崎岖，观光车司机开得飞快，过弯时车身几乎是甩过去的。上山的车程大约是 45 分钟。
 
-![山路一景](https://blog-assets.bytespark.me/dLEykl.jpeg "山路一景")
+![山路一景](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/mountain-road-scenery.webp "山路一景")
 
 下车后，由于高原反应和晕车的双重影响，我差点站不稳，只能扶着栏杆一步一步走。还好稍作休息后就没什么大碍了。
 
-![海拔3845米](https://blog-assets.bytespark.me/fpqPsn.jpeg "海拔3845米")
+![海拔3845米](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/altitude-3845m.webp "海拔3845米")
 
 遗憾的是，天公不作美，我们并没有看到蓝天白云，而是被一望无际的云海包围。不过，既然来了，也只能欣赏眼前的景色了。
 
-![云海](https://blog-assets.bytespark.me/0fTAUv.jpeg "云海")
+![云海](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/sea-of-clouds-1.webp "云海")
 
-![山顶一角](https://blog-assets.bytespark.me/FsjrVI.jpeg "山顶一角")
+![山顶一角](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/mountaintop-corner.webp "山顶一角")
 
-![还是云海](https://blog-assets.bytespark.me/HecyLs.jpeg "还是云海")
+![还是云海](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/sea-of-clouds-2.webp "还是云海")
 
-![雪山公路](https://blog-assets.bytespark.me/8xsNJY.jpeg "雪山公路")
+![雪山公路](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/snow-mountain-road.webp "雪山公路")
 
-![随处可见的耗牛](https://blog-assets.bytespark.me/ozrJM4.jpeg "随处可见的耗牛")
+![随处可见的耗牛](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/yak.webp "随处可见的耗牛")
 
-![离开前的河流](https://blog-assets.bytespark.me/3pkQIw.jpeg "离开前的河流")
+![离开前的河流](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/river-before-leaving.webp "离开前的河流")
 
 下山时已经是晚上七点，我们随即启程前往酒店。
 
@@ -83,45 +83,45 @@ image: "https://blog-assets.bytespark.me/TDZeWS.jpeg"
 
 首先，我们来到了雅拉雪山。由于通往观景台的路被堵死了，我们只能在停车场拍摄雪山的景色。虽然相比观景台角度差了一些，但依然能够看到壮丽的雪山景色。
 
-![雅拉雪山](https://blog-assets.bytespark.me/WMpBOF.jpeg "雅拉雪山")
+![雅拉雪山](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/yala-snow-mountain.webp "雅拉雪山")
 
 接下来，我们前往墨石公园。一路上的风景十分迷人。
 
-![四处都是雪山](https://blog-assets.bytespark.me/G0xCxc.jpeg "四处都是雪山")
+![四处都是雪山](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/snow-mountains-along-the-way.webp "四处都是雪山")
 
 在第一天前往酒店时，司机建议我们退掉自己在网上订的门票，由他帮忙订团体票。同样是`80元/人`，但团体票会比散客优先进到景区。
 
-![墨石公园](https://blog-assets.bytespark.me/jWmLj0.jpeg "墨石公园")
+![墨石公园](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/moshi-park.webp "墨石公园")
 
 墨石公园也需要乘坐观光车从山脚到山顶，不过这次车程较短，大约 5 分钟左右。墨石公园的特色是其墨黑色的石头，步道周围有很多当地藏民的小孩在卖酸奶和酥油茶。我们买了两杯酸奶，每杯都加了几勺白砂糖，或许这是当地的特色吧，味道还挺好。
 
-![酸奶加白砂糖](https://blog-assets.bytespark.me/YligEe.jpeg "酸奶加白砂糖")
+![酸奶加白砂糖](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/yogurt-with-sugar.webp "酸奶加白砂糖")
 
 墨石公园游览过程中天气开始变晴，终于能看到蓝天白云了。
 
-![墨黑色的石头](https://blog-assets.bytespark.me/ap2C1U.jpeg "墨黑色的石头")
+![墨黑色的石头](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/black-rocks.webp "墨黑色的石头")
 
-![逐渐出晴天](https://blog-assets.bytespark.me/8Sy4sQ.jpeg "逐渐出晴天")
+![逐渐出晴天](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/clearing-sky.webp "逐渐出晴天")
 
 离开墨石公园后，我们前往塔公草原。司机告诉我们塔公草原并没有特别好看，还需要每人支付几十元的清洁费，他建议我们把时间留给格底拉姆和鱼子西，说不定还能看到日照金山。
 
-![去往塔公草原](https://blog-assets.bytespark.me/apg796.jpeg "去往塔公草原")
+![去往塔公草原](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/to-tagong-grassland.webp "去往塔公草原")
 
 于是，我们在塔公草原停车场简单打了卡后便离开了。
 
-![塔公草原打卡](https://blog-assets.bytespark.me/fq8ez6.jpeg "塔公草原打卡")
+![塔公草原打卡](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/tagong-grassland-checkin.webp "塔公草原打卡")
 
 格底拉姆和鱼子西相隔不远，所以我们可以一次游览两个地方。去往鱼子西的路上，沿途的风景依然美不胜收。
 
 很不巧的是，我们上山时遇到了一场大雨，这让我们感到非常失望，但后来在穿越云层后，天气竟然变晴了！这对我们能看到日照金山是个好兆头。
 
-![格底拉姆](https://blog-assets.bytespark.me/OPl7Ez.jpeg "格底拉姆")
+![格底拉姆](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/gedilamu.webp "格底拉姆")
 
-![格底拉姆天气放晴](https://blog-assets.bytespark.me/rjjLlI.jpeg "格底拉姆天气放晴")
+![格底拉姆天气放晴](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/gedilamu-clearing.webp "格底拉姆天气放晴")
 
-![鱼子西有一点日照金山的样子，但不多](https://blog-assets.bytespark.me/TDZeWS.jpeg "鱼子西有一点日照金山的样子，但不多")
+![鱼子西有一点日照金山的样子，但不多](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/yuzixi-alpenglow.webp "鱼子西有一点日照金山的样子，但不多")
 
-<MDXVideo src="https://blog-assets.bytespark.me/6MI8mN.mp4" caption="在鱼子西期待日照金山" />
+<MDXVideo src="https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/yuzixi-awaiting-alpenglow.mp4" caption="在鱼子西期待日照金山" />
 
 最终，我们并没有看到日照金山，因为等待期间又下起了小雨，雨势逐渐加大，我们只能放弃等待，前往新都桥的酒店休息。
 
@@ -137,15 +137,15 @@ image: "https://blog-assets.bytespark.me/TDZeWS.jpeg"
 
 我们一行人就在烂路上摇了近两个小时，终于到达子梅垭口。
 
-![子梅垭口](https://blog-assets.bytespark.me/e3dhHj.jpeg "子梅垭口")
+![子梅垭口](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/zimei-pass.webp "子梅垭口")
 
 可惜天气依然不作美。
 
 在这里行走比以往更费力，氧气瓶更是不能离手。尽管在一直吸氧，但是高反带来的头痛头晕还是在持续。
 
-![海拔4565米](https://blog-assets.bytespark.me/StW5Wo.jpeg "海拔4565米")
+![海拔4565米](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/altitude-4565m.webp "海拔4565米")
 
-![依旧是云海的子梅垭口](https://blog-assets.bytespark.me/zMbo9F.jpeg "依旧是云海的子梅垭口")
+![依旧是云海的子梅垭口](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/zimei-pass-sea-of-clouds.webp "依旧是云海的子梅垭口")
 
 下午我们前往冷嘎措，依旧是一条烂路。
 
@@ -169,7 +169,7 @@ image: "https://blog-assets.bytespark.me/TDZeWS.jpeg"
 
 房间外面的风景在白天还是很不错的。
 
-![房间外](https://blog-assets.bytespark.me/bYqcpe.jpeg "房间外")
+![房间外](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/view-outside-room.webp "房间外")
 
 藏服旅拍是旅行社赠送的，可以说是专门给女生定制的项目。
 
@@ -179,15 +179,15 @@ image: "https://blog-assets.bytespark.me/TDZeWS.jpeg"
 
 随后我们前往塔公草原附近吃饭。
 
-![塔公草原附近](https://blog-assets.bytespark.me/bLx9yE.jpeg "塔公草原附近")
+![塔公草原附近](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/near-tagong-grassland.webp "塔公草原附近")
 
 下午我们出去前往最后一个景点：红海子。
 
 主要观赏一个巨大的湖，而且只要收取`15元/人`的清洁费，算是这么多个景区最便宜的。
 
-![红海子](https://blog-assets.bytespark.me/GNyV2C.jpeg "红海子")
+![红海子](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/honghaizi-lake.webp "红海子")
 
-![罕见的蓝色花](https://blog-assets.bytespark.me/Dwpwgk.jpeg "罕见的蓝色花")
+![罕见的蓝色花](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/rare-blue-flower.webp "罕见的蓝色花")
 
 最终，这段旅程在红海子美丽的湖泊旁画上了句号，带着满满的回忆，我们踏上了返程。
 
