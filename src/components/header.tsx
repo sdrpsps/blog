@@ -15,7 +15,7 @@ const Header = () => {
   const isPostsPage = pathname.includes("/posts/");
 
   return (
-    <header className="pt-4">
+    <header className="px-4 pt-4">
       <div className="container mx-auto">
         <motion.div
           initial={{ maxWidth: "48rem" }}
