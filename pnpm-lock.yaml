@@ -29,6 +29,9 @@ importers:
       lucide-react:
         specifier: ^0.536.0
         version: 0.536.0(react@19.2.0)
+      mdast-util-toc:
+        specifier: ^7.1.0
+        version: 7.1.0
       motion:
         specifier: ^12.23.12
         version: 12.23.24(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -62,6 +65,9 @@ importers:
       tailwind-merge:
         specifier: ^3.3.1
         version: 3.3.1
+      unist-util-visit:
+        specifier: ^5.0.0
+        version: 5.0.0
       word-count:
         specifier: ^0.3.1
         version: 0.3.1
@@ -81,6 +87,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.1.16
+      '@types/mdast':
+        specifier: ^4.0.4
+        version: 4.0.4
       '@types/node':
         specifier: ^24.1.0
         version: 24.9.1
@@ -90,6 +99,9 @@ importers:
       '@types/react-dom':
         specifier: ^19
         version: 19.2.2(@types/react@19.2.2)
+      '@types/unist':
+        specifier: ^3.0.3
+        version: 3.0.3
       eslint:
         specifier: ^9
         version: 9.38.0(jiti@2.6.1)

@@ -1,8 +1,9 @@
 import hljs from "highlight.js";
 import Image from "next/image";
-import Link from "next/link";
 import * as React from "react";
 
+import { MDXLinkPreview } from "@/components/mdx/mdx-link-preview";
+import { MDXVideo } from "@/components/mdx/mdx-video";
 import { cn, generateHeadingId } from "@/lib/utils";
 
 export const mdxComponents = {
@@ -192,7 +193,7 @@ export const mdxComponents = {
     alt,
     title,
   }: React.ImgHTMLAttributes<HTMLImageElement>) => {
-    // 如果 title 属性存在，将其作为底部描述
+    // When a title is provided, render it as a caption beneath the image.
     const hasCaption = title && title.trim() !== "";
 
     if (hasCaption) {
@@ -217,7 +218,6 @@ export const mdxComponents = {
       );
     }
 
-    // 如果没有 title，返回普通图片
     return (
       <Image
         src={src as string}
@@ -327,61 +327,6 @@ export const mdxComponents = {
     />
   ),
   Image,
-  Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
-    <Link
-      className={cn(
-        "font-medium text-primary no-underline",
-        "transition-all duration-200 ease-in-out",
-        "hover:text-primary/80 hover:underline hover:underline-offset-4",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-        className
-      )}
-      {...props}
-    />
-  ),
-  LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
-    <Link
-      className={cn(
-        "flex w-full flex-col items-center rounded-xl border border-border/50",
-        "bg-card p-6 text-card-foreground shadow-sm",
-        "transition-all duration-200 ease-in-out",
-        "hover:bg-muted/30 hover:shadow-md hover:border-border",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-        "sm:p-10",
-        className
-      )}
-      {...props}
-    />
-  ),
-  MDXVideo: ({
-    src,
-    caption,
-    className,
-    ...props
-  }: React.VideoHTMLAttributes<HTMLVideoElement> & {
-    caption?: string;
-    src?: string;
-  }) => (
-    <>
-      <video
-        className={cn(
-          "max-w-[70%] mx-auto rounded-lg border border-border/50",
-          "shadow-sm w-full mt-8",
-          className
-        )}
-        loop
-        controls
-        preload="metadata"
-        {...props}
-      >
-        {src && <source src={src} />}
-        您的浏览器不支持视频播放。
-      </video>
-      {caption && (
-        <span className="block mt-3 text-center text-sm text-muted-foreground">
-          {caption}
-        </span>
-      )}
-    </>
-  ),
+  LinkPreview: MDXLinkPreview,
+  Video: MDXVideo,
 };

@@ -121,7 +121,7 @@ image: "https://blog-assets.bytespark.me/2024-national-day-journey-to-western-si
 
 ![鱼子西有一点日照金山的样子，但不多](https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/yuzixi-alpenglow.webp "鱼子西有一点日照金山的样子，但不多")
 
-<MDXVideo src="https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/yuzixi-awaiting-alpenglow.mp4" caption="在鱼子西期待日照金山" />
+<Video src="https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/yuzixi-awaiting-alpenglow.mp4" caption="在鱼子西期待日照金山" />
 
 最终，我们并没有看到日照金山，因为等待期间又下起了小雨，雨势逐渐加大，我们只能放弃等待，前往新都桥的酒店休息。
 

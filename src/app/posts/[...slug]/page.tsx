@@ -14,7 +14,7 @@ import count from "word-count";
 
 import GiscusComments from "@/components/giscus-comments";
 import { GoTop } from "@/components/go-top";
-import { mdxComponents } from "@/components/mdx-components";
+import { mdxComponents } from "@/components/mdx/mdx-components";
 import { TableOfContents } from "@/components/table-of-contents";
 import { config } from "@/lib/config";
 import { getTableOfContents } from "@/lib/toc";
