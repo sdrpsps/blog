@@ -48,5 +48,8 @@
 		"typescript": "^5",
 		"wrangler": "^4.27.0",
 		"zod": "^4.0.14"
+	},
+	"engines": {
+		"node": ">=22.0.0"
 	}
 }
