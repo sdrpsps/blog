@@ -16,16 +16,15 @@ const Header = () => {
 
   return (
     <header className="px-4 pt-4">
-      <div className="container mx-auto">
-        <motion.div
-          initial={{ maxWidth: "48rem" }}
-          animate={{ maxWidth: isPostsPage ? "72rem" : "48rem" }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-          className={cn(
-            "container mx-auto flex h-16 items-center justify-between md:px-4",
-            isPostsPage ? "max-w-4xl xl:max-w-6xl" : "max-w-3xl"
-          )}
-        >
+      <motion.div
+        initial={{ maxWidth: "48rem" }}
+        animate={{ maxWidth: isPostsPage ? "72rem" : "48rem" }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className={cn(
+          "mx-auto flex h-16 items-center justify-between md:px-4",
+          isPostsPage ? "max-w-4xl xl:max-w-6xl" : "max-w-3xl"
+        )}
+      >
           <Link href="/" title="Home">
             <Image
               src="/avatar.png"
@@ -48,8 +47,7 @@ const Header = () => {
               </Link>
             </Button>
           </div>
-        </motion.div>
-      </div>
+      </motion.div>
     </header>
   );
 };

@@ -16,7 +16,7 @@ export const mdxComponents = {
       <h1
         id={generateHeadingId(children)}
         className={cn(
-          "font-heading mt-12 mb-8 scroll-m-20 text-4xl/tight font-bold tracking-tight",
+          "font-heading mt-12 mb-8 scroll-m-20 text-4xl/tight font-bold tracking-tight text-balance",
           "text-foreground",
           className
         )}
@@ -35,7 +35,7 @@ export const mdxComponents = {
       <h2
         id={generateHeadingId(children)}
         className={cn(
-          "font-heading mt-10 mb-6 scroll-m-20 text-2xl/tight font-semibold tracking-tight",
+          "font-heading mt-10 mb-6 scroll-m-20 text-2xl/tight font-semibold tracking-tight text-balance",
           "text-foreground",
           className
         )}
@@ -54,7 +54,7 @@ export const mdxComponents = {
       <h3
         id={generateHeadingId(children)}
         className={cn(
-          "font-heading mt-8 mb-4 scroll-m-20 text-xl/tight font-semibold tracking-tight",
+          "font-heading mt-8 mb-4 scroll-m-20 text-xl/tight font-semibold tracking-tight text-balance",
           "text-foreground",
           className
         )}
@@ -73,7 +73,7 @@ export const mdxComponents = {
       <h4
         id={generateHeadingId(children)}
         className={cn(
-          "font-heading mt-6 mb-3 scroll-m-20 text-lg/tight font-medium tracking-tight",
+          "font-heading mt-6 mb-3 scroll-m-20 text-lg/tight font-medium tracking-tight text-balance",
           "text-foreground",
           className
         )}
@@ -92,7 +92,7 @@ export const mdxComponents = {
       <h5
         id={generateHeadingId(children)}
         className={cn(
-          "font-heading mt-4 mb-2 scroll-m-20 text-lg/tight font-medium tracking-tight",
+          "font-heading mt-4 mb-2 scroll-m-20 text-lg/tight font-medium tracking-tight text-balance",
           "text-foreground",
           className
         )}
@@ -111,7 +111,7 @@ export const mdxComponents = {
       <h6
         id={generateHeadingId(children)}
         className={cn(
-          "font-heading mt-3 mb-2 scroll-m-20 text-sm/tight font-medium tracking-tight",
+          "font-heading mt-3 mb-2 scroll-m-20 text-sm/tight font-medium tracking-tight text-balance",
           "text-muted-foreground",
           className
         )}
@@ -138,7 +138,7 @@ export const mdxComponents = {
     <p
       className={cn(
         "my-4 text-base/7 text-foreground",
-        "leading-relaxed",
+        "leading-relaxed text-pretty",
         className
       )}
       {...props}

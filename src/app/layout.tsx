@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
-      <body className="flex flex-col min-h-screen min-w-md">
+      <body className="flex flex-col min-h-screen">
         <Script id="ld-json-website" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
             "@context": "https://schema.org",
