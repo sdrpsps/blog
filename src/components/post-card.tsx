@@ -25,15 +25,23 @@ export default function PostCard({ post }: PostCardProps) {
           />
         )}
         <div className="space-y-2">
-          <div className="line-clamp-2 text-xl">
-            <div className="flex flex-col md:flex-row md:justify-between gap-2 w-full">
-              <span className="underline underline-offset-4 text-foreground">{post.title}</span>
-              <span className="text-sm text-muted-foreground">
+          <div className="text-xl">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-x-3 gap-y-1 w-full">
+              <div className="min-w-0">
+                <div className="line-clamp-2">
+                  <span className="underline underline-offset-4 text-foreground">
+                    {post.title}
+                  </span>
+                </div>
+              </div>
+              <span className="text-sm text-muted-foreground whitespace-nowrap">
                 {formatDate(post.date)} · {count(post.content)} 字
               </span>
             </div>
           </div>
-          <div className="line-clamp-2 text-muted-foreground">{post.summary}</div>
+          <div className="line-clamp-2 text-muted-foreground">
+            {post.summary}
+          </div>
         </div>
       </Link>
     </article>
