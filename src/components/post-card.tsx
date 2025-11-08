@@ -22,6 +22,7 @@ export default function PostCard({ post }: PostCardProps) {
               width={0}
               height={0}
               sizes="100vw"
+              priority
               className="object-cover h-40 w-full"
             />
           </div>

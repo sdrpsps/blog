@@ -31,8 +31,8 @@ const Header = () => {
               alt="logo"
               width={40}
               height={40}
-              className="rounded-full"
               priority
+              className="rounded-full"
             />
           </Link>
           <div className="flex items-center gap-2">
