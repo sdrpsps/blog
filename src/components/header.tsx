@@ -1,6 +1,6 @@
 "use client";
 
-import { GithubIcon } from "lucide-react";
+import { GithubIcon, RssIcon } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -37,6 +37,11 @@ const Header = () => {
           </Link>
           <div className="flex items-center gap-2">
             <ThemeToggle />
+            <Button variant="ghost" size="icon" asChild>
+              <Link href="/rss" title="RSS 订阅">
+                <RssIcon className="w-5 h-5" />
+              </Link>
+            </Button>
             <Button variant="ghost" size="icon" asChild>
               <Link
                 href="https://github.com/sdrpsps"
