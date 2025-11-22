@@ -21,19 +21,21 @@ export default function GiscusComments() {
   };
 
   return (
-    <Giscus
-      id="comments"
-      repo={config.giscus.repo as `${string}/${string}`}
-      repoId={config.giscus.repoId}
-      category="Announcements"
-      categoryId={config.giscus.categoryId}
-      mapping="pathname"
-      reactionsEnabled="1"
-      emitMetadata="0"
-      inputPosition="top"
-      theme={getGiscusTheme()}
-      lang="en"
-      loading="lazy"
-    />
+    <div className="px-6">
+      <Giscus
+        id="comments"
+        repo={config.giscus.repo as `${string}/${string}`}
+        repoId={config.giscus.repoId}
+        category="Announcements"
+        categoryId={config.giscus.categoryId}
+        mapping="pathname"
+        reactionsEnabled="1"
+        emitMetadata="0"
+        inputPosition="top"
+        theme={getGiscusTheme()}
+        lang="en"
+        loading="lazy"
+      />
+    </div>
   );
 }
