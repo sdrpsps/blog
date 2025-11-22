@@ -3,6 +3,7 @@ import Image from "next/image";
 import * as React from "react";
 
 import { MDXLinkPreview } from "@/components/mdx/mdx-link-preview";
+import { MDXMusicCard } from "@/components/mdx/mdx-music-card";
 import { MDXVideo } from "@/components/mdx/mdx-video";
 import { cn, generateHeadingId } from "@/lib/utils";
 
@@ -328,5 +329,6 @@ export const mdxComponents = {
   ),
   Image,
   LinkPreview: MDXLinkPreview,
+  MusicCard: MDXMusicCard,
   Video: MDXVideo,
 };
