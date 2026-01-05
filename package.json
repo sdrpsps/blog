@@ -13,7 +13,7 @@
 	},
 	"dependencies": {
 		"@giscus/react": "^3.1.0",
-		"@opennextjs/cloudflare": "^1.3.0",
+		"@opennextjs/cloudflare": "^1.14.7",
 		"@radix-ui/react-slot": "^1.2.3",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
@@ -36,7 +36,7 @@
 	},
 	"devDependencies": {
 		"@content-collections/core": "^0.10.0",
-		"@content-collections/next": "^0.2.6",
+		"@content-collections/next": "^0.2.10",
 		"@eslint/eslintrc": "^3",
 		"@shikijs/rehype": "^3.9.2",
 		"@tailwindcss/postcss": "^4",
@@ -50,7 +50,7 @@
 		"tailwindcss": "^4",
 		"tw-animate-css": "^1.3.6",
 		"typescript": "^5",
-		"wrangler": "^4.27.0",
+		"wrangler": "^4.54.0",
 		"zod": "^4.0.14"
 	},
 	"engines": {
