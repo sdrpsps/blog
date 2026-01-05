@@ -21,8 +21,8 @@ export default function Home() {
       <div className="space-y-4">
         <h2 className="text-2xl font-bold mb-8 text-foreground">推荐阅读</h2>
         <div className="space-y-4">
-          {posts.map((post) => (
-            <PostCard post={post} key={post.slug} />
+          {posts.map((post, index) => (
+            <PostCard post={post} key={post.slug} priority={index === 0 && !!post.image} />
           ))}
         </div>
       </div>

@@ -7,10 +7,10 @@ import { formatDate } from "@/lib/utils";
 
 interface PostCardProps {
   post: Post;
-  className?: string;
+  priority?: boolean;
 }
 
-export default function PostCard({ post }: PostCardProps) {
+export default function PostCard({ post, priority = false }: PostCardProps) {
   return (
     <article className="border-b border-border last:border-b-0 pb-4">
       <Link href={`/posts/${post.slug}`} className="block">
@@ -19,10 +19,10 @@ export default function PostCard({ post }: PostCardProps) {
             <Image
               src={post.image}
               alt={post.title}
-              width={0}
-              height={0}
-              sizes="100vw"
-              priority
+              width={800}
+              height={320}
+              sizes="(max-width: 768px) 100vw, 800px"
+              priority={priority}
               className="object-cover h-40 w-full"
             />
           </div>

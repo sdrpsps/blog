@@ -1,6 +1,7 @@
 import Script from "next/script";
 
 import Footer from "@/components/footer";
+import FontLoader from "@/components/font-loader";
 import Header from "@/components/header";
 import { config } from "@/lib/config";
 
@@ -16,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="zh-CN" suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
+        <FontLoader />
         <Script id="ld-json-website" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
             "@context": "https://schema.org",

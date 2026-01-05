@@ -18,7 +18,7 @@ export const config: SiteConfig = {
   metadata: {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
     title: "Sunny's Blog",
-    description: "一个前端仔的自留地",
+    description: "一个树洞",
     keywords: [
       "Blog",
       "Next.js",
@@ -38,7 +38,7 @@ export const config: SiteConfig = {
   author: {
     name: "Sunny Chou",
     email: "sunny@bytespark.me",
-    bio: "多思考，多实践，多总结",
+    bio: "探寻生活的意义，向阳而生",
   },
   giscus: {
     repo: "sdrpsps/blog",
