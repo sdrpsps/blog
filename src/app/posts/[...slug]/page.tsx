@@ -11,6 +11,7 @@ import remarkMath from "remark-math";
 import remarkMdx from "remark-mdx";
 import { SafeMdxRenderer } from "safe-mdx";
 import count from "word-count";
+import { FileText } from "lucide-react";
 
 import GiscusComments from "@/components/giscus-comments";
 import { GoTop } from "@/components/go-top";
@@ -141,10 +142,22 @@ const PostsSlugPage = async ({ params }: PostsSlugPageProps) => {
           })}
         </Script>
         <div className="my-4">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-muted-foreground">
             {formatDate(post.date)} · {count(post.content)} 字
           </p>
         </div>
+        {post.summary && (
+          <div className="my-6 rounded-lg border-l-4 border-primary/50 bg-muted/30 p-4 backdrop-blur-sm transition-all hover:bg-muted/50">
+            <div className="flex items-start gap-3">
+              <div className="mt-0.5 shrink-0">
+                <FileText className="h-5 w-5 text-primary/70" />
+              </div>
+              <div className="flex-1">
+                <p className="text-base leading-relaxed text-foreground">{post.summary}</p>
+              </div>
+            </div>
+          </div>
+        )}
 
         <main>
           <SafeMdxRenderer
