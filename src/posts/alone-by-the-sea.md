@@ -1,7 +1,7 @@
 ---
 title: 一个人的海边
-date: 2025-10-22T23:00:00.000Z
-updated: 2025-10-22T23:00:00.000Z
+date: 2025-10-22 23:00:00
+updated: 2025-10-22 23:00:00
 keywords: ["分手", "碎碎念"]
 summary: "在不知名的沙滩上，风依旧吹，浪依旧涌——只是再没有人并肩看天色变换。"
 image: "https://blog-assets.bytespark.me/alone-by-the-sea/waves-washed-feet.webp"

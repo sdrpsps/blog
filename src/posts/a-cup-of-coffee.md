@@ -1,7 +1,7 @@
 ---
 title: "一杯咖啡"
-date: 2025-11-08T23:15:00.000Z
-updated: 2025-11-08T23:15:00.000Z
+date: 2025-11-08 23:15:00
+updated: 2025-11-08 23:15:00
 keywords: ["碎碎念"]
 summary: "我想靠近你，但又不能靠近你。"
 image: "https://blog-assets.bytespark.me/a-cup-of-coffee/cover.webp"
@@ -12,11 +12,11 @@ image: "https://blog-assets.bytespark.me/a-cup-of-coffee/cover.webp"
 那间店我们其实只去过一次。每次都说“下次来吧”，但每一次都忘记。  
 那次是你换新手机，让我帮你设置。我临时从广州请假赶回来，晚上我们还一起去吃了烧烤。
 
-今天我又点了杯卡布奇诺。咖啡师意外地给我拉了一只小狗。  
+今天我又点了杯卡布奇诺。咖啡师意外地给我拉了一只小狗。
 
 ![咖啡师给我拉了一只小狗](https://blog-assets.bytespark.me/a-cup-of-coffee/cover.webp "咖啡师给我拉了一只小狗")
 
-那一瞬间我确实想发给你看看，但我知道不太合适，也会把自己拉回到内耗里。  
+那一瞬间我确实想发给你看看，但我知道不太合适，也会把自己拉回到内耗里。
 
 在咖啡馆坐了一个多小时，写了些东西，也让自己静一静。
 

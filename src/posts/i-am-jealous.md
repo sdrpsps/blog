@@ -1,7 +1,7 @@
 ---
 title: 我在嫉妒
-date: 2025-11-02T10:00:00.000Z
-updated: 2025-11-02T10:00:00.000Z
+date: 2025-11-02 10:00:00
+updated: 2025-11-02 10:00:00
 keywords: ["分手", "碎碎念"]
 summary: "在凌晨一场梦惊醒后，我发现我在嫉妒。"
 image: "https://blog-assets.bytespark.me/i-am-jealous/cover.webp"

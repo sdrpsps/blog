@@ -1,4 +1,5 @@
 import { type ClassValue, clsx } from "clsx";
+import { format } from "date-fns";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -11,16 +12,8 @@ export interface TocItem {
   level: number;
 }
 
-export function formatDate(date: string) {
-  const [year, month, day] = new Date(date)
-    .toLocaleDateString("zh-CN", {
-      year: "numeric",
-      month: "numeric",
-      day: "numeric",
-    })
-    .split("/");
-
-  return `${year}年${month}月${day}日`;
+export function formatDate(date: string | number | Date) {
+  return format(date, "yyyy年M月d日");
 }
 
 // 生成标题 ID 的工具函数

@@ -1,7 +1,7 @@
 ---
 title: 2024 国庆川西之旅
-date: 2024-10-06T12:58:31.000Z
-updated: 2025-08-23T10:11:19.000Z
+date: 2024-10-06 12:58:31
+updated: 2025-08-23 10:11:19
 keywords: ["旅行", "川西"]
 summary: "2024年10月1号到10月6号，我与女友（现已是前女友）前往川西旅行，感受到川西的独特魅力"
 image: "https://blog-assets.bytespark.me/2024-national-day-journey-to-western-sichuan/yuzixi-alpenglow.webp"
