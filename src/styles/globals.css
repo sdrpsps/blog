@@ -16,25 +16,27 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #111111;
-  --border: rgba(0, 0, 0, 0.08);
-  --muted-foreground: #666666;
-  --primary: #111111;
-  --muted: #f7f7f7;
-  --accent: #111111;
-  --card: #ffffff;
+  --background: #faf8f5; /* 温润柔和的宣纸色 */
+  --foreground: #1e1e1d; /* 柔和深墨色 */
+  --border: rgba(30, 30, 29, 0.05); /* 极细纸张压痕线 */
+  --muted-foreground: #787870; /* 烟灰色 */
+  --primary: #1e1e1d;
+  --muted: #f4f2ee; /* 稍深的纸张色 */
+  --accent: #3f5246; /* 雅致沉稳黛绿 */
+  --accent-hover: #334238;
+  --card: #faf8f5;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #e3e3e3;
-  --border: rgba(255, 255, 255, 0.08);
-  --muted-foreground: #8a8a8a;
-  --primary: #ffffff;
+  --background: #0d0d0d; /* 碳墨色 */
+  --foreground: #e2e2e0; /* 银白 */
+  --border: rgba(226, 226, 224, 0.05);
+  --muted-foreground: #888882;
+  --primary: #e2e2e0;
   --muted: #141414;
-  --accent: #ffffff;
-  --card: #121212;
+  --accent: #788a7e; /* 柔和黛绿 */
+  --accent-hover: #8ba092;
+  --card: #0d0d0d;
 }
 
 * {
@@ -48,6 +50,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* 原生平滑滚动 */
@@ -55,16 +58,83 @@ html {
   scroll-behavior: smooth;
 }
 
+/* 全局书籍版心边框线定义 */
+@media (min-width: 1024px) {
+  .book-border-l {
+    border-left: 0.5px solid var(--border);
+    padding-left: 3rem;
+  }
+  .book-border-r {
+    border-right: 0.5px solid var(--border);
+    padding-right: 3rem;
+  }
+}
+
+/* 链接下划线展开效果 */
+.fancy-link {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.fancy-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 0.5px;
+  bottom: -1px;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fancy-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* 纯 CSS 文章列表 Hover 聚焦动效 */
+.article-list-container {
+  transition: all 0.3s ease;
+}
+.article-list-container:hover .article-item {
+  opacity: 0.45;
+}
+.article-list-container .article-item {
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.article-list-container .article-item:hover {
+  opacity: 1;
+  transform: translateX(6px);
+}
+
+/* TOC 刻度线动效 */
+.toc-marker {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.toc-link.active .toc-marker {
+  height: 14px;
+  border-radius: 2px;
+  background-color: var(--accent);
+}
+
 /* 博客正文的极简排版规则 */
 .markdown-body {
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: clamp(1.025rem, 0.2vw + 1rem, 1.125rem);
+  line-height: 1.85;
+  letter-spacing: 0.015em;
+  font-weight: 300;
   word-wrap: break-word;
 }
 
 .markdown-body p {
   margin-top: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
 }
 
 .markdown-body h1,
@@ -72,27 +142,36 @@ html {
 .markdown-body h3,
 .markdown-body h4 {
   color: var(--foreground);
-  font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  font-weight: 500;
+  margin-top: 2.2rem;
+  margin-bottom: 1.1rem;
+  letter-spacing: 0.02em;
 }
 
 .markdown-body a {
   color: var(--primary);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  transition: opacity 0.15s ease;
+  text-decoration: none;
+  border-bottom: 0.5px dashed var(--accent);
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .markdown-body a:hover {
-  opacity: 0.8;
+  color: var(--accent);
+  border-bottom-style: solid;
 }
 
 .markdown-body blockquote {
-  margin: 1.5rem 0;
-  padding: 0.5rem 1rem;
+  margin: 2rem 0;
+  padding: 1rem 1.25rem;
   color: var(--muted-foreground);
-  border-left: 3px solid var(--border);
+  border-left: 2px solid var(--accent);
   background-color: var(--muted);
-  font-style: italic;
+  font-style: normal;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.975rem;
+}
+/* 序言段落的高级排版 */
+.style-preface {
+  letter-spacing: 0.04em;
+  font-weight: 300;
 }

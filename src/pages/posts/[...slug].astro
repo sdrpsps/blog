@@ -49,21 +49,24 @@ const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
   <div class="relative max-w-5xl mx-auto px-6 py-12 lg:py-16 xl:grid xl:grid-cols-[1fr_240px] gap-12">
     <!-- Main Content Area -->
     <article class="min-w-0 max-w-2xl mx-auto w-full">
-      <header class="mb-12">
-        <h1 class="text-3xl font-semibold text-foreground tracking-tight leading-tight mb-4">
+      <header class="mb-14">
+        <h1 class="text-3xl font-light text-foreground tracking-widest leading-snug mb-6">
           {post.data.title}
         </h1>
-        <div class="flex items-center gap-2 text-xs text-muted-foreground font-light">
+        <div class="flex items-center gap-2 text-[10px] tracking-widest text-muted-foreground/80 font-light uppercase">
           <time datetime={post.data.date.toISOString()}>
             {formatDate(post.data.date)}
           </time>
           <span>·</span>
-          <span>{count(post.body || '')} 字</span>
+          <span>{count(post.body || '')} WORDS</span>
         </div>
       </header>
 
       {post.data.summary && (
-        <div class="mb-10 p-4 rounded-md bg-neutral-50 dark:bg-neutral-900 border border-border/50 text-sm text-muted-foreground leading-relaxed font-light italic">
+        <div class="mb-12 p-5 rounded border border-border/30 bg-muted/20 text-sm md:text-base text-muted-foreground leading-relaxed font-light relative">
+          <span class="absolute -top-2.5 left-4 px-2 bg-background text-[11px] tracking-widest text-accent font-semibold uppercase">
+            引子 / INTRO
+          </span>
           {post.data.summary}
         </div>
       )}
@@ -74,7 +77,7 @@ const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
       </div>
 
       <!-- Comments Section -->
-      <div class="mt-20 pt-8 border-t border-border/60">
+      <div class="mt-24 pt-10 border-t border-border/30">
         <div id="giscus-container" class="giscus"></div>
       </div>
     </article>
@@ -82,20 +85,21 @@ const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
     <!-- Sidebar / TOC (only on xl screens) -->
     {tocHeadings.length > 0 && (
       <aside class="hidden xl:block">
-        <div class="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
-          <h2 class="text-xs font-semibold tracking-wider uppercase text-muted-foreground mb-4">
-            目录
+        <div class="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto pl-4 border-l border-border/20">
+          <h2 class="text-[10px] font-semibold tracking-[0.2em] uppercase text-muted-foreground/80 mb-6">
+            目录 / INDEX
           </h2>
           <nav class="space-y-2">
-            <ul class="space-y-2 text-xs font-light list-none pl-0">
+            <ul class="space-y-1 text-xs font-light list-none pl-0">
               {tocHeadings.map((heading) => (
-                <li class={`pl-${(heading.depth - 2) * 3}`}>
+                <li style={`padding-left: ${(heading.depth - 2) * 0.75}rem;`}>
                   <a
                     href={`#${heading.slug}`}
-                    class="toc-link block py-1 text-muted-foreground hover:text-foreground transition-colors duration-150 truncate"
+                    class="toc-link flex items-center gap-2 py-1.5 text-muted-foreground hover:text-foreground transition-all duration-300 truncate"
                     data-slug={heading.slug}
                   >
-                    {heading.text}
+                    <span class="toc-marker flex-shrink-0"></span>
+                    <span class="truncate">{heading.text}</span>
                   </a>
                 </li>
               ))}
@@ -109,7 +113,7 @@ const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
   <!-- Go Top Button -->
   <button
     id="go-top"
-    class="fixed bottom-8 right-8 p-3 rounded-full bg-background border border-border shadow-md opacity-0 pointer-events-none transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer z-50 text-muted-foreground hover:text-foreground"
+    class="fixed bottom-8 right-8 w-10 h-10 rounded-full bg-background border border-border/60 shadow-sm opacity-0 pointer-events-none transition-all duration-500 hover:scale-105 hover:border-accent hover:text-accent active:scale-95 cursor-pointer z-50 flex items-center justify-center text-muted-foreground"
     aria-label="返回顶部"
   >
     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -177,10 +181,10 @@ const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
           const activeSlug = entry.target.id;
           tocLinks.forEach((link) => {
             if (link.getAttribute('data-slug') === activeSlug) {
-              link.classList.add('text-foreground', 'font-medium');
+              link.classList.add('active', 'text-foreground', 'font-medium');
               link.classList.remove('text-muted-foreground');
             } else {
-              link.classList.remove('text-foreground', 'font-medium');
+              link.classList.remove('active', 'text-foreground', 'font-medium');
               link.classList.add('text-muted-foreground');
             }
           });
