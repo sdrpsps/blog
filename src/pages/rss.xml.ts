@@ -1,8 +1,9 @@
+import type { APIContext } from "astro";
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import { config } from "../lib/config";
 
-export async function GET(context: any) {
+export async function GET(context: APIContext) {
   const posts = await getCollection("posts");
   const sortedPosts = posts.sort(
     (a, b) => b.data.date.getTime() - a.data.date.getTime(),

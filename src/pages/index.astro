@@ -1,9 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
-import count from 'word-count';
+import ArticleListItem from '../components/ArticleListItem.astro';
 import Layout from '../layouts/Layout.astro';
 import { config } from '../lib/config';
-import { formatDate } from '../lib/utils';
 
 const posts = await getCollection('posts');
 const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
@@ -32,53 +31,9 @@ const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.get
       </div>
 
       <div class="article-list-container space-y-12">
-        {sortedPosts.map((post) => {
-          const date = post.data.date;
-          const year = date.getFullYear();
-          const month = String(date.getMonth() + 1).padStart(2, '0');
-          const day = String(date.getDate()).padStart(2, '0');
-          return (
-            <article class="article-item group relative pb-10 border-b border-border/20 last:border-0 last:pb-0">
-              <a href={`/posts/${post.id}`} class="block">
-                <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-                  <!-- 左侧：纤细日期 -->
-                  <div class="md:w-28 flex-shrink-0 md:pt-1 text-left">
-                    <span class="text-[10px] tracking-widest text-muted-foreground/75 font-light block md:inline">
-                      {year} . {month} . {day}
-                    </span>
-                  </div>
-                  
-                  <!-- 中间：核心文字内容 -->
-                  <div class="flex-1 space-y-2">
-                    <h3 class="text-base md:text-lg font-medium text-foreground group-hover:text-accent transition-colors duration-300 leading-snug">
-                      {post.data.title}
-                    </h3>
-                    {post.data.summary && (
-                      <p class="text-xs md:text-sm text-muted-foreground/80 leading-relaxed font-light line-clamp-2">
-                        {post.data.summary}
-                      </p>
-                    )}
-                    <div class="text-[9px] text-muted-foreground/70 tracking-widest pt-1 font-light uppercase">
-                      {count(post.body || '')} WORDS
-                    </div>
-                  </div>
-
-                  <!-- 右侧：缩略图画框 -->
-                  {post.data.image && (
-                    <div class="w-full md:w-36 flex-shrink-0 aspect-video md:aspect-[4/3] overflow-hidden rounded border border-border/30 p-0.5 bg-muted/30 transition-all duration-700 ease-in-out group-hover:border-accent/30 self-center md:self-start">
-                      <img
-                        src={post.data.image}
-                        alt={post.data.title}
-                        class="object-cover h-full w-full opacity-85 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-700 ease-in-out filter sepia-[15%] group-hover:sepia-0"
-                        loading="lazy"
-                      />
-                    </div>
-                  )}
-                </div>
-              </a>
-            </article>
-          );
-        })}
+        {sortedPosts.map((post) => (
+          <ArticleListItem post={post} headingTag="h3" />
+        ))}
       </div>
     </div>
   </main>

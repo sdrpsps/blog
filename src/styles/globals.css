@@ -129,7 +129,7 @@ html {
   line-height: 1.85;
   letter-spacing: 0.015em;
   font-weight: 300;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .markdown-body p {

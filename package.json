@@ -40,7 +40,6 @@
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.9",
-		"@content-collections/core": "^0.10.0",
 		"@eslint/eslintrc": "^3",
 		"@shikijs/rehype": "^3.9.2",
 		"@tailwindcss/postcss": "^4",
