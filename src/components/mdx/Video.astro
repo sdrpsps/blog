@@ -1,0 +1,25 @@
+---
+interface Props {
+  src: string;
+  caption?: string;
+  className?: string;
+}
+
+const { src, caption, className = '' } = Astro.props;
+---
+<div class="my-8 flex flex-col items-center">
+  <video
+    class={`max-w-xl mx-auto rounded-lg border border-border/50 shadow-xs w-full ${className}`}
+    src={src}
+    loop
+    controls
+    preload="metadata"
+  >
+    您的浏览器不支持视频播放。
+  </video>
+  {caption && (
+    <span class="block mt-3 text-center text-xs text-muted-foreground font-light">
+      {caption}
+    </span>
+  )}
+</div>

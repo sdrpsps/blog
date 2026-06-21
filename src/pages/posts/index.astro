@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import ArticleListItem from '../../components/ArticleListItem.astro';
+import Layout from '../../layouts/Layout.astro';
+import { config } from '../../lib/config';
+
+const posts = await getCollection('posts');
+const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<Layout title="文章" description={config.metadata.description as string}>
+  <main class="max-w-5xl mx-auto px-6 py-20">
+    <div class="mb-24 space-y-4">
+      <h1 class="text-3xl font-light tracking-widest text-foreground">所有文章</h1>
+      <div class="w-8 h-[1px] bg-accent/40"></div>
+      <p class="text-xs text-muted-foreground font-light tracking-wider">
+        共收录 {sortedPosts.length} 篇文章
+      </p>
+    </div>
+
+    <div class="article-list-container space-y-12">
+      {sortedPosts.map((post) => (
+        <ArticleListItem post={post} headingTag="h2" />
+      ))}
+    </div>
+  </main>
+</Layout>

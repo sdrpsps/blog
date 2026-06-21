@@ -1,4 +1,9 @@
-import type { Metadata } from "next";
+interface Metadata {
+  title: string;
+  description: string;
+  keywords?: string[];
+  [key: string]: any;
+}
 
 type SiteConfig = {
   metadata: Metadata;
@@ -16,19 +21,20 @@ type SiteConfig = {
 
 export const config: SiteConfig = {
   metadata: {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
-    title: "Sunny's Blog",
-    description: "一个树洞",
+    metadataBase: new URL("https://bytespark.me"),
+    title: "Sunny's Space",
+    description:
+      "Sunny Chou 的个人空间。一个静谧的个人树洞与心灵角落，用于记录生活的散页、思绪的涟漪与岁月留痕。",
     keywords: [
-      "Blog",
-      "Next.js",
-      "React",
-      "Vue",
-      "TypeScript",
-      "JavaScript",
-      "Frontend",
-      "Backend",
-      "Fullstack",
+      "Sunny Chou",
+      "Sunny's Space",
+      "个人空间",
+      "树洞",
+      "随笔",
+      "情感回忆",
+      "生活记录",
+      "散文",
+      "手账",
     ],
     openGraph: {
       type: "website",

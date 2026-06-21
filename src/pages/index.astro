@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import ArticleListItem from '../components/ArticleListItem.astro';
+import Layout from '../layouts/Layout.astro';
+import { config } from '../lib/config';
+
+const posts = await getCollection('posts');
+const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<Layout title={config.metadata.title as string}>
+  <main class="max-w-5xl mx-auto px-6 py-20">
+    <!-- 极简而富有杂志扉页感的序言区域 -->
+    <div class="mb-24 space-y-6 pt-6">
+      <div class="flex items-center gap-3">
+        <span class="text-[9px] tracking-[0.3em] text-accent font-semibold uppercase">VOL. 01</span>
+        <span class="w-1.5 h-[0.5px] bg-border/80"></span>
+        <span class="text-[9px] tracking-[0.3em] text-muted-foreground/80 font-light uppercase">PREFACE</span>
+      </div>
+      <p class="text-lg md:text-xl font-light leading-relaxed text-foreground/90 max-w-lg style-preface">
+        这里是一个静谧的角落，用于记录生活的散页与思绪的涟漪。在漫长的岁月里，向阳而生。
+      </p>
+    </div>
+
+    <!-- 推荐阅读列表 -->
+    <div class="space-y-16">
+      <div class="flex items-center justify-between border-b border-border/30 pb-3 mb-10">
+        <h2 class="text-[10px] font-semibold tracking-[0.2em] uppercase text-muted-foreground/80">
+          推荐阅读 / RECOMMENDED
+        </h2>
+      </div>
+
+      <div class="article-list-container space-y-12">
+        {sortedPosts.map((post) => (
+          <ArticleListItem post={post} headingTag="h3" />
+        ))}
+      </div>
+    </div>
+  </main>
+</Layout>
