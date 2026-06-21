@@ -1,0 +1,216 @@
+---
+import { getCollection, render } from 'astro:content';
+import count from 'word-count';
+import Layout from '../../layouts/Layout.astro';
+import { config } from '../../lib/config';
+import { formatDate } from '../../lib/utils';
+import MusicCard from '../../components/mdx/MusicCardWrapper.astro';
+import Video from '../../components/mdx/Video.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+
+// 过滤 H2 和 H3 级别的 heading 用于目录
+const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
+---
+
+<Layout
+  title={post.data.title}
+  description={post.data.summary}
+  image={post.data.image}
+  isPostPage={true}
+>
+  <!-- SEO Article Schema -->
+  <script type="application/ld+json" is:inline define:vars={{ post, config }}>
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post.data.title,
+      "description": post.data.summary || "",
+      "image": post.data.image ? [post.data.image] : undefined,
+      "author": {
+        "@type": "Person",
+        "name": config.author.name,
+        "email": config.author.email
+      },
+      "datePublished": post.data.date,
+      "dateModified": post.data.updated || post.data.date
+    }
+  </script>
+
+  <div class="relative max-w-5xl mx-auto px-6 py-12 lg:py-16 xl:grid xl:grid-cols-[1fr_240px] gap-12">
+    <!-- Main Content Area -->
+    <article class="min-w-0 max-w-2xl mx-auto w-full">
+      <header class="mb-12">
+        <h1 class="text-3xl font-semibold text-foreground tracking-tight leading-tight mb-4">
+          {post.data.title}
+        </h1>
+        <div class="flex items-center gap-2 text-xs text-muted-foreground font-light">
+          <time datetime={post.data.date.toISOString()}>
+            {formatDate(post.data.date)}
+          </time>
+          <span>·</span>
+          <span>{count(post.body || '')} 字</span>
+        </div>
+      </header>
+
+      {post.data.summary && (
+        <div class="mb-10 p-4 rounded-md bg-neutral-50 dark:bg-neutral-900 border border-border/50 text-sm text-muted-foreground leading-relaxed font-light italic">
+          {post.data.summary}
+        </div>
+      )}
+
+      <!-- MDX Render Body -->
+      <div class="markdown-body prose dark:prose-invert max-w-none">
+        <Content components={{ MusicCard, Video }} />
+      </div>
+
+      <!-- Comments Section -->
+      <div class="mt-20 pt-8 border-t border-border/60">
+        <div id="giscus-container" class="giscus"></div>
+      </div>
+    </article>
+
+    <!-- Sidebar / TOC (only on xl screens) -->
+    {tocHeadings.length > 0 && (
+      <aside class="hidden xl:block">
+        <div class="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
+          <h2 class="text-xs font-semibold tracking-wider uppercase text-muted-foreground mb-4">
+            目录
+          </h2>
+          <nav class="space-y-2">
+            <ul class="space-y-2 text-xs font-light list-none pl-0">
+              {tocHeadings.map((heading) => (
+                <li class={`pl-${(heading.depth - 2) * 3}`}>
+                  <a
+                    href={`#${heading.slug}`}
+                    class="toc-link block py-1 text-muted-foreground hover:text-foreground transition-colors duration-150 truncate"
+                    data-slug={heading.slug}
+                  >
+                    {heading.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </aside>
+    )}
+  </div>
+
+  <!-- Go Top Button -->
+  <button
+    id="go-top"
+    class="fixed bottom-8 right-8 p-3 rounded-full bg-background border border-border shadow-md opacity-0 pointer-events-none transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer z-50 text-muted-foreground hover:text-foreground"
+    aria-label="返回顶部"
+  >
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6" />
+    </svg>
+  </button>
+
+  <!-- Giscus and Client Logic Scripts -->
+  <script is:inline define:vars={{ config }}>
+    // 动态添加 Giscus Script 并根据当前主题渲染
+    const theme = (() => {
+      const stored = localStorage.getItem('theme');
+      if (stored && stored !== 'system') return stored;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    })();
+
+    const giscusContainer = document.getElementById('giscus-container');
+    if (giscusContainer) {
+      const script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.setAttribute('data-repo', config.giscus.repo);
+      script.setAttribute('data-repo-id', config.giscus.repoId);
+      script.setAttribute('data-category', 'Announcements');
+      script.setAttribute('data-category-id', config.giscus.categoryId);
+      script.setAttribute('data-mapping', 'pathname');
+      script.setAttribute('data-strict', '0');
+      script.setAttribute('data-reactions-enabled', '1');
+      script.setAttribute('data-emit-metadata', '0');
+      script.setAttribute('data-input-position', 'top');
+      script.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
+      script.setAttribute('data-lang', 'zh-CN');
+      script.setAttribute('crossorigin', 'anonymous');
+      script.async = true;
+      giscusContainer.appendChild(script);
+    }
+
+    // GoTop Logic
+    const goTopBtn = document.getElementById('go-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) {
+        goTopBtn?.classList.remove('opacity-0', 'pointer-events-none');
+      } else {
+        goTopBtn?.classList.add('opacity-0', 'pointer-events-none');
+      }
+    });
+    goTopBtn?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // TOC Active Highlight Logic
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const headingElements = Array.from(tocLinks)
+      .map((link) => document.getElementById(link.getAttribute('data-slug') || ''))
+      .filter((el) => el !== null);
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -70% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const activeSlug = entry.target.id;
+          tocLinks.forEach((link) => {
+            if (link.getAttribute('data-slug') === activeSlug) {
+              link.classList.add('text-foreground', 'font-medium');
+              link.classList.remove('text-muted-foreground');
+            } else {
+              link.classList.remove('text-foreground', 'font-medium');
+              link.classList.add('text-muted-foreground');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    headingElements.forEach((el) => observer.observe(el));
+
+    // 监听主题切换，实时同步更新 Giscus
+    const observerTheme = new MutationObserver(() => {
+      const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+      const iframe = document.querySelector('iframe.giscus-frame');
+      if (iframe) {
+        iframe.contentWindow.postMessage(
+          {
+            giscus: {
+              setConfig: {
+                theme: currentTheme
+              }
+            }
+          },
+          'https://giscus.app'
+        );
+      }
+    });
+
+    observerTheme.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  </script>
+</Layout>

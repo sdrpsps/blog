@@ -1,4 +1,9 @@
-import type { Metadata } from "next";
+interface Metadata {
+  title: string;
+  description: string;
+  keywords?: string[];
+  [key: string]: any;
+}
 
 type SiteConfig = {
   metadata: Metadata;
@@ -16,7 +21,7 @@ type SiteConfig = {
 
 export const config: SiteConfig = {
   metadata: {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://bytespark.me'),
     title: "Sunny's Blog",
     description: "一个树洞",
     keywords: [
